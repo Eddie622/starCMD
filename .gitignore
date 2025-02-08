@@ -1,0 +1,6 @@
+/vendor
+/bootstrap/cache/*
+/storage/logs/*
+.env
+.vite.
+.DS_Store

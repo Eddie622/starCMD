@@ -1,0 +1,10 @@
+# Docker-related files
+/docker-volumes/
+/docker/
+/docker-compose.override.yml
+/.docker/
+/docker-logs/
+
+# Temporary and runtime files
+*.pid
+*.log
