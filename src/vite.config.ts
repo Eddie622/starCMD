@@ -13,13 +13,16 @@ export default defineConfig({
         tsconfigPaths(),
     ],
     build: {
-        target: 'esnext', // Ensure we're targeting the latest JavaScript features
+        target: 'esnext',
     },
     server: {
         port: 5173,
-        host: '0.0.0.0',  // Binding to 0.0.0.0 ensures that the server is accessible externally
+        host: '0.0.0.0',
         hmr: {
-        host: 'localhost', // Ensures HMR is bound to localhost even inside Docker
+            host: 'localhost',
+        },
+        watch: {
+            usePolling: true,
         },
     },
 });

@@ -1,20 +1,21 @@
-interface DashboardProps {
-    stats: {
-    cpu: string;
-    memory: string;
+import AppLayout from '@/Layouts/AppLayout';
+import ServerStats from '@/Components/ServerStats';
+
+type Stats = {
+    cpu: number;
+    memory: number;
     uptime: string;
-    };
-}
+};
+
+type DashboardProps = {
+    stats: Stats;
+};
 
 export default function Dashboard({ stats }: DashboardProps) {
     return (
-    <div>
-        <h1>Server Stats</h1>
-        <ul>
-        <li>CPU Usage: {stats.cpu}</li>
-        <li>Memory Usage: {stats.memory}</li>
-        <li>Uptime: {stats.uptime}</li>
-        </ul>
-    </div>
+        <AppLayout>
+            <h1>Dashboard</h1>
+            <ServerStats cpu={stats.cpu} memory={stats.memory} />
+        </AppLayout>
     );
 }
